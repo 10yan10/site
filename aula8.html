@@ -43,31 +43,76 @@
           </div>
         </div>
       </nav>
-      
+       
+      <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula de Circuitos Digitais e Arduino</title>
+</head>
+<body>
+    <h1>Aula de Circuitos Digitais e Arduino</h1>
 
-      <h2>Aula de hoje</h2>
-      
-      <p>Na aula de hoje, aprendemos sobre como utilizar entradas com LDR (Light Dependent Resistor), Arduino, resistores e LEDs. Além disso, também montamos portas lógicas AND, OR e NOT no Arduino utilizando botões, resistores e LEDs.</p>
-      
-      <h3>Entradas com LDR</h3>
-      
-      <p>O LDR é um componente eletrônico que varia sua resistência em resposta à quantidade de luz que incide sobre ele. Isso permite que ele seja usado como um sensor de luz. No Arduino, você pode conectar o LDR a uma entrada analógica e ler o valor de resistência para determinar a quantidade de luz presente.</p>
-      
-      <h3>Portas Lógicas</h3>
-      
-      <p>As portas lógicas são os blocos de construção básicos da lógica digital. Elas permitem que você combine entradas para produzir uma saída baseada em regras específicas.</p>
-      
-      <ul>
-        <li><strong>Porta AND (E)</strong>: A porta AND produz uma saída alta (TRUE) apenas quando todas as entradas são altas (TRUE).</li>
+    <h2>Momento Um: Portas Lógicas</h2>
+    <p>No primeiro momento da aula, construímos circuitos das portas lógicas AND, OR e NOT com dois botões como entradas e um LED como saída. Testamos os circuitos de acordo com as tabelas verdade. Foram gerados três vídeos, um para cada porta lógica.</p>
+    
+    <img src="https://i.pinimg.com/originals/5a/e4/a2/5ae4a2cfcacb6880d4596652184e9d7b.jpg" >
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/JUpQcLoVCqU?si=tg6gu4Lmgi_-00nr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-        <li><strong>Porta OR (OU)</strong>: A porta OR produz uma saída alta (TRUE) quando pelo menos uma das entradas é alta (TRUE).</li>
-        
-        <li><strong>Porta NOT (NÃO)</strong>: A porta NOT inverte a entrada, produzindo uma saída alta (TRUE) quando a entrada é baixa (FALSE) e vice-versa.</li>
-      </ul>
-      
-      <p>No Arduino, você pode implementar essas portas lógicas utilizando botões, resistores e LEDs. Por exemplo, você pode conectar dois botões a entradas digitais do Arduino e utilizar o código para implementar a lógica desejada. O LED pode ser usado como saída para indicar o resultado da operação lógica.</p>
-      
-      <p>Essa aula foi muito útil para entender como trabalhar com entradas e saídas no Arduino, além de aprender sobre a implementação de portas lógicas básicas. Isso é fundamental para projetos mais complexos que envolvem tomada de decisão e controle de dispositivos.</p>
+    <img src="https://i.pinimg.com/originals/ae/dc/27/aedc274857a685dde90da1d935ab67c7.jpg" >
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/K4NnGD2TK-U?si=M6HxceqLp957Kd_-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <img src="https://i.pinimg.com/originals/ed/6a/a3/ed6aa3eae3865bd7c127eea6002f9c1b.jpg" >
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/r-YHdmzY4wI?si=slZdK9PZWJO2xzWi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <h2>Momento Dois: Circuito com LDR e LED</h2>
+    <p>No segundo momento, criamos um circuito elétrico com uma entrada (LDR) e uma saída (LED), com o Arduino processando o valor analógico. Foi gerado um vídeo demonstrando esse circuito.</p>
+
+    <h3>Código em Arduino</h3>
+    <pre>
+        <code>
+            /*****************************
+            *   Edusesc Taguatinga      *
+            *   Nome: Yan Silva         *
+            *   Itinerário de robótica  *
+            *   *************************
+            */
+           
+             // Declaração de Variáveis e Constantes
+           const int LED = 13;
+           int LDR = A0;
+           
+           
+           // Configurações
+           void setup() {
+             pinMode(LED, OUTPUT);
+             pinMode(LDR, INPUT);
+             Serial.begin(9600);
+           }
+           //Repetições
+           void loop() {
+             int luz = analogRead(LDR);
+             Serial.println(luz);
+           
+             if (luz > 100) {
+               digitalWrite(LED, HIGH);
+             } 
+             else {
+               digitalWrite(LED, LOW);
+             }
+           }
+           <img src="https://i.pinimg.com/originals/37/46/3d/37463d18fbc6010ae3501b1317b2bcc0.jpg" >
+           <iframe width="560" height="315" src="https://www.youtube.com/embed/Ktty10VVhmY?si=0nDJooDiJvn87nhX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              
+            </code>
+    </pre>
+
+    
+    <footer>
+        <p>&copy; 2024 Yan . Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
 
 
 
